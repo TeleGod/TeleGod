@@ -160,12 +160,12 @@ end
 if Redis:get(Fast..'chsource') then
 chsource = Redis:get(Fast..'chsource')
 else
-chsource = "XB_35"
+chsource = "A2NAA"
 end
 if Redis:get(Fast..'chdevolper') then
 chdevolper = Redis:get(Fast..'chdevolper')
 else 
-chdevolper = "XB_35"
+chdevolper = "A2NAA"
 end
 
 function chat_type(ChatId)
@@ -227,7 +227,7 @@ return kk
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,1052711356,1052711356,1891597035}  
+local ListSudos ={Sudo_Id,2095537199,2095537199,5296104620}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -246,12 +246,12 @@ Manger = Redis:sismember(Fast.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Fast.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Fast.."Special:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 1052711356 then
-Status = 'المبرمج دٰآيموند'
-elseif UserId == 1052711356 then
+if UserId == 2095537199 then
+Status = 'المبرمج تيركس'
+elseif UserId == 2095537199 then
 Status = 'مطور السورس'
-elseif UserId == 1891597035 then
-Status = 'المطور حمد'
+elseif UserId == 5296104620 then
+Status = 'المطور انس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == Fast then
@@ -827,11 +827,11 @@ Manger = Redis:sismember(Fast.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Fast.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Fast.."Special:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 1052711356 then
+if UserId == 2095537199 then
 Status = true
-elseif UserId == 1052711356 then
+elseif UserId == 2095537199 then
 Status = true
-elseif UserId == 1891597035 then
+elseif UserId == 5296104620 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -873,11 +873,11 @@ Special = Redis:sismember(Fast.."Special:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 00000000 then
 Status = true
-elseif UserId == 1052711356 then
+elseif UserId == 2095537199 then
 Status = true
-elseif UserId == 1052711356 then
+elseif UserId == 2095537199 then
 Status = true
-elseif UserId == 1891597035 then
+elseif UserId == 5296104620 then
 Status = true
 elseif UserId == Sudo_Id then    
 Status = true
@@ -989,7 +989,7 @@ if chh then
 local url = https.request("https://api.telegram.org/bot"..Token.."/getchatmember?chat_id="..chh.."&user_id="..msg.sender.user_id)
 data = json:decode(url)
 if data.result.status == "left" or data.result.status == "kicked" then
-if tonumber(msg.sender.user_id) ~= tonumber(1052711356) then
+if tonumber(msg.sender.user_id) ~= tonumber(2095537199) then
 JoinChannel = false 
 end
 end
@@ -997,21 +997,21 @@ end
 return JoinChannel
 end
 function otlop(msg)
-XB_35 = true
+A2NAA = true
 local chh = Redis:get("ch:3am")
 if chh then
 local url = https.request("https://api.telegram.org/bot5120205136:AAH483WyZWuxlCSGc8OMLtf_FL1NTmwVQ0o/getchatmember?chat_id="..chh.."&user_id="..msg.sender.user_id)
 data = json:decode(url)
 if data.ok == false then
-XB_35 = false
+A2NAA = false
 end
 if data and data.result and data.result.status  == "left" or data.result.status == "kicked" then
-if tonumber(msg.sender.user_id) ~= tonumber(1052711356) then
-XB_35 = false 
+if tonumber(msg.sender.user_id) ~= tonumber(2095537199) then
+A2NAA = false 
 end
 end
 end
-return XB_35
+return A2NAA
 end
 function File_Bot_Run(msg,data)  
 local msg_chat_id = msg.chat_id
@@ -1055,13 +1055,13 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 1052711356 then
+if tonumber(msg.sender.user_id) == 2095537199 then
 msg.Name_Controller = 'مطور السورس'
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 1052711356 then
+elseif tonumber(msg.sender.user_id) == 2095537199 then
 msg.Name_Controller = 'مطور السورس'
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 1891597035 then
+elseif tonumber(msg.sender.user_id) == 5296104620 then
 msg.Name_Controller = 'مطور السورس'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -1308,7 +1308,7 @@ for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
 print(v)
 if v == tonumber(Fast) then
-local N = (Redis:get(Fast.."Name:Bot") or "دٰآيموند")
+local N = (Redis:get(Fast.."Name:Bot") or "تيركس")
 photo = LuaTele.getUserProfilePhotos(Fast)
 local TextBot = '*⋆ مرحبا بكم في بوت '..N..'\n⋆ وظيفته حمايه المجموعة من السبام والتفليش الخ..\n⋆ لتفعيل البوت اضفه مشرف واكتب تفعيل\n*'
 keyboard = {} 
@@ -2750,7 +2750,7 @@ Abs = math.random(2,140);
 local Text ='*⋆ تم اختيار متحركه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ',url="https://t.me/A2NAA"}},
+{{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ',url="https://t.me/A2NAA"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -2760,7 +2760,7 @@ Abs = math.random(2,140);
 local Text ='*⋆ تم اختيار الشعر لك فقط*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ',url="https://t.me/A2NAA"}},
+{{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ',url="https://t.me/A2NAA"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -2770,7 +2770,7 @@ Abs = math.random(2,140);
 local Text ='*⋆ تم اختيار الميمز لك فقط*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ',url="https://t.me/XB_35"}},
+{{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ',url="https://t.me/A2NAA"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/tiktokvotlx1/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -2781,7 +2781,7 @@ local Text ='*⋆ تم تحمبل *'
 local keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ', url = "https://t.me/A2NAA"}
+{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ', url = "https://t.me/A2NAA"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -2793,7 +2793,7 @@ local Text ='*⋆ تم اختيار الفلم لك*'
 local keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ', url = "https://t.me/A2NAA"}
+{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ', url = "https://t.me/A2NAA"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -2805,7 +2805,7 @@ local Text ='*⋆ تم اختيار انمي لك*'
 local keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ', url = "https://t.me/A2NAA"}
+{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ', url = "https://t.me/A2NAA"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -2816,7 +2816,7 @@ Abs = math.random(2,140);
 local Text ='*⋆ تم اختيار الاغنيه لك*'
 local keyboardd = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ',url="https://t.me/A2NAA"}},
+{{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ',url="https://t.me/A2NAA"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/lDIDIl/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboardd)) 
@@ -2827,7 +2827,7 @@ local Text ='*⋆ تم اختيار صور*'
 local keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ', url = "https://t.me/A2NAA"}
+{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ', url = "https://t.me/A2NAA"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -2924,7 +2924,7 @@ end
 end   
 Get_Json = Get_Json..'],'
 end
-Get_Json = Get_Json..'"Dev":"XB_35"}'
+Get_Json = Get_Json..'"Dev":"A2NAA"}'
 end
 Get_Json = Get_Json..'}}'
 local File = io.open('./'..UserBot..'.json', "w")
@@ -6244,14 +6244,14 @@ end
 if Controller(msg_chat_id,UserId) == 'المطور الاساسي' then
 return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,UserId).." } *","md",true)  
 end
-if UserId == "1052711356" then
+if UserId == "2095537199" then
 return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على مبرمج السورس *","md",true)  
 end
-if UserId == "1891597035" then
+if UserId == "5296104620" then
 return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على المطور حمد*","md",true)  
 end
-if UserId == "1052711356" then
-return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على  مطور سورس دٰآيموند *","md",true)  
+if UserId == "2095537199" then
+return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على  مطور سورس تيركس *","md",true)  
 end
 if Redis:sismember(Fast.."BanAll:Groups",UserId) then
 return send(msg_chat_id,msg_id,Reply_Status(UserId,"⋆ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
@@ -6284,14 +6284,14 @@ local UserId = text:match('^كتم عام (%d+)$')
 if not msg.Devss then
 return send(msg_chat_id,msg_id,'\n*⋆ هذا الامر يخص '..Controller_Num(2)..' * ',"md",true)  
 end
-if UserId == "1052711356" then
-return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على المبرمج دٰآيموند *","md",true)  
+if UserId == "2095537199" then
+return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على المبرمج تيركس *","md",true)  
 end
-if UserId == "1891597035" then
+if UserId == "5296104620" then
 return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على المطور حسن *","md",true)  
 end
-if UserId == "1052711356" then
-return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على مطور سورس دٰآيموند *","md",true)  
+if UserId == "2095537199" then
+return send(msg_chat_id,msg_id,"\n*⋆ عذرآ لا تستطيع استخدام الامر على مطور سورس تيركس *","md",true)  
 end
 local UserInfo = LuaTele.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -10580,7 +10580,7 @@ if Redis:get(Fast.."kit_defullt:") == "true" then
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس دٰآيموند؟ ", 
+"ما هيا عيوب سورس تيركس؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -10596,13 +10596,13 @@ if Redis:get(Fast.."kit_defullt:") == "true" then
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس دٰآيموند؟ ", 
+" هل يعجبك سورس تيركس؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس دٰآيموند؟ ", 
+"اي رايك في سورس تيركس؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " نسبه الندم عندك للي وثقت فيهم ؟", 
@@ -10916,7 +10916,7 @@ if text == "اضف كت" then
         Redis:sadd(Fast.."kit:", text)
         return send(msg_chat_id,msg_id,"⋆ تم حفظ السؤال","md",false, false, false, false, reply_markup)
     end
-    if text == "دٰآيموند كت" then
+    if text == "تيركس كت" then
         local list = Redis:smembers(Fast.."kit:")
         randk = list[math.random(#list)]
         send(msg_chat_id, msg_id,'['..randk..']',"md",true)
@@ -11976,11 +11976,11 @@ end
 end
 
 if text == "بوت انا مين" then
-if msg.sender.user_id == tonumber(1052711356) then
+if msg.sender.user_id == tonumber(2095537199) then
 send(msg_chat_id,msg_id,"⋆ انت مطور السورس يقلبي🌚♥","md",true)
-elseif msg.sender.user_id == tonumber(1052711356) then
+elseif msg.sender.user_id == tonumber(2095537199) then
 send(msg_chat_id,msg_id,"⋆ انت مطور السورس يقلبي🌚♥","md",true)
-elseif msg.sender.user_id == tonumber(1891597035) then
+elseif msg.sender.user_id == tonumber(5296104620) then
 send(msg_chat_id,msg_id,"⋆ انت مطور السورس يقلبي🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(Sudo_Id) then
 send(msg_chat_id,msg_id,"⋆ انت المطور الاساسي يقلبي🌚♥","md",true)
@@ -13027,7 +13027,7 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or te
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
-photo = "https://t.me/XB_35/100"
+photo = "https://t.me/A2NAA/7"
 local Name = '*- 𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒂𝒎𝒐𝒏𝒅  .*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13278,7 +13278,7 @@ end
 Redis:del(Fast.."Name:Bot") 
 return send(msg_chat_id,msg_id,"⋆ تم حذف اسم البوت ","md",true)   
 end
-if text == (Redis:get(Fast.."Name:Bot") or "دٰآيموند") then
+if text == (Redis:get(Fast.."Name:Bot") or "تيركس") then
 if Redis:get(Fast.."name bot type : ") == "photo" then
   local photo = LuaTele.getUserProfilePhotos(Fast)
   local UserInfo = LuaTele.getUser(Fast)
@@ -13293,7 +13293,7 @@ if Redis:get(Fast.."name bot type : ") == "photo" then
   }
   
   if photo.total_count > 0 then
-    local NamesBot = (Redis:get(Fast.."Name:Bot") or "دٰآيموند")
+    local NamesBot = (Redis:get(Fast.."Name:Bot") or "تيركس")
     local NameBots = {
 "قلب "..NamesBot ,
 "اؤمر انا "..NamesBot ,
@@ -13302,7 +13302,7 @@ if Redis:get(Fast.."name bot type : ") == "photo" then
 }
   return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,NameBots[math.random(#NameBots)], "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
   else
-    local NamesBot = (Redis:get(Fast.."Name:Bot") or "دٰآيموند")
+    local NamesBot = (Redis:get(Fast.."Name:Bot") or "تيركس")
     local NameBots = {
 "قلب "..NamesBot ,
 "اؤمر انا "..NamesBot ,
@@ -13312,7 +13312,7 @@ if Redis:get(Fast.."name bot type : ") == "photo" then
   return LuaTele.sendText(msg_chat_id,msg_id,NameBots[math.random(#NameBots)],"md") 
   end 
   end
-      local NamesBot = (Redis:get(Fast.."Name:Bot") or "دٰآيموند")
+      local NamesBot = (Redis:get(Fast.."Name:Bot") or "تيركس")
     local NameBots = {
 "قلب "..NamesBot ,
 "اؤمر انا "..NamesBot ,
@@ -13327,7 +13327,7 @@ end
 if text == "بوت" then
 local photo = LuaTele.getUserProfilePhotos(Fast)
 local ban = LuaTele.getUser(Fast)
-local Namebot = (Redis:get(Fast.."Name:Bot") or "دٰآيموند")
+local Namebot = (Redis:get(Fast.."Name:Bot") or "تيركس")
 local BotName = {
 '▸ '..Namebot..' ◂',
 }
@@ -13431,7 +13431,7 @@ local texting = {"اخر افلام شاهدتها",
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس دٰآيموند؟ ", 
+"ما هيا عيوب سورس تيركس؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -13447,13 +13447,13 @@ local texting = {"اخر افلام شاهدتها",
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس دٰآيموند؟ ", 
+" هل يعجبك سورس تيركس؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس دٰآيموند؟ ", 
+"اي رايك في سورس تيركس؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " نسبه الندم عندك للي وثقت فيهم ؟", 
@@ -13983,7 +13983,7 @@ Redis:set("boballban"..creditcc,text)
 Redis:set("boballid"..creditcc,banid)
 Redis:sadd("booob",msg.sender.user_id)
 Redis:del("booobb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n• تم انشاء حساب في بنك دٰآيموند 🏦\n• وشحنالك 50 دولار هديه\n\n⋆ رقم حسابك ⋆ ( `"..creditcc.."` )\n⋆ نوع البطاقة ⋆ ( ماستر 💳 )\n⋆ فلوسك ⋆ ( 50 دولار 💰 )  ","md",true)  
+LuaTele.sendText(msg.chat_id,msg.id, "\n• تم انشاء حساب في بنك تيركس 🏦\n• وشحنالك 50 دولار هديه\n\n⋆ رقم حسابك ⋆ ( `"..creditcc.."` )\n⋆ نوع البطاقة ⋆ ( ماستر 💳 )\n⋆ فلوسك ⋆ ( 50 دولار 💰 )  ","md",true)  
 end 
 if text == "فيزا" then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -14004,7 +14004,7 @@ Redis:set("boballban"..creditvi,text)
 Redis:set("boballid"..creditvi,banid)
 Redis:sadd("booob",msg.sender.user_id)
 Redis:del("booobb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n• تم انشاء حساب في بنك دٰآيموند 🏦\n• وشحنالك 50 دولار هدية\n\n⋆ رقم حسابك ⋆ ( `"..creditvi.."` )\n⋆ نوع البطاقة ⋆ ( فيزا 💳 )\n⋆ فلوسك ⋆ ( 50 دولار 💰 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n• تم انشاء حساب في بنك تيركس 🏦\n• وشحنالك 50 دولار هدية\n\n⋆ رقم حسابك ⋆ ( `"..creditvi.."` )\n⋆ نوع البطاقة ⋆ ( فيزا 💳 )\n⋆ فلوسك ⋆ ( 50 دولار 💰 )  ","md",true)   
 end 
 if text == "اكسبرس" then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -14025,7 +14025,7 @@ Redis:set("boballban"..creditex,text)
 Redis:set("boballid"..creditex,banid)
 Redis:sadd("booob",msg.sender.user_id)
 Redis:del("booobb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n• تم انشاء حساب في بنك دٰآيموند 🏦\n• وشحنالك 50 دولار هديه\n\n⋆ رقم حسابك ⋆ ( `"..creditex.."` )\n⋆ نوع البطاقة ⋆ ( اكسبرس 💳 )\n⋆ فلوسك ⋆ ( 50 دولار 💰 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n• تم انشاء حساب في بنك تيركس 🏦\n• وشحنالك 50 دولار هديه\n\n⋆ رقم حسابك ⋆ ( `"..creditex.."` )\n⋆ نوع البطاقة ⋆ ( اكسبرس 💳 )\n⋆ فلوسك ⋆ ( 50 دولار 💰 )  ","md",true)   
 end 
 end
 if text == 'مسح حساب بنكي' or text == 'مسح حساب البنكي' or text =='مسح الحساب بنكي' or text =='مسح الحساب البنكي' or text == "مسح حسابي البنكي" or text == "مسح حسابي بنكي" or text == "مسح حسابي" then
@@ -14213,7 +14213,7 @@ uuuu = Redis:get("bbobb"..msg.sender.user_id)
 pppp = Redis:get("rrfff"..msg.sender.user_id) or 0
 ballancee = Redis:get("boob"..msg.sender.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..cccc.."`\n⋆ بنك ↫ ( دٰآيموند )\n⋆ نوع ↫ ( "..uuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ( "..pppp.." دولار 💰 )","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..cccc.."`\n⋆ بنك ↫ ( تيركس )\n⋆ نوع ↫ ( "..uuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ( "..pppp.." دولار 💰 )","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ليس لديك حساب بنكي ارسل ↫ ( `انشاء حساب بنكي` )","md",true)
 end
@@ -14251,7 +14251,7 @@ Redis:del("roog1"..Remsg.sender.user_id)
 Redis:del("rooga1"..Remsg.sender.user_id)
 Redis:del("rahr1"..Remsg.sender.user_id)
 Redis:del("rahrr1"..Remsg.sender.user_id)
-LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..ccccc.."`\n⋆ بنك ↫ ( دٰآيموند )\n⋆ نوع ↫ ( "..uuuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ⋆ ( "..ppppp.." دولار 💰 )\n⋆ مسكين مسحت حسابه ","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..ccccc.."`\n⋆ بنك ↫ ( تيركس )\n⋆ نوع ↫ ( "..uuuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ⋆ ( "..ppppp.." دولار 💰 )\n⋆ مسكين مسحت حسابه ","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ لا يمتلك حساب بنكي ","md",true)
 end
@@ -14279,7 +14279,7 @@ uuuuu = Redis:get("bbobb"..Remsg.sender.user_id)
 ppppp = Redis:get("rrfff"..Remsg.sender.user_id) or 0
 ballanceed = Redis:get("boob"..Remsg.sender.user_id) or 0
 local convert_mony = string.format("%.0f",ballanceed)
-LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..ccccc.."`\n⋆ بنك ↫ ( دٰآيموند )\n⋆ نوع ↫ ( "..uuuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ⋆ ( "..ppppp.." دولار 💰 )","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..ccccc.."`\n⋆ بنك ↫ ( تيركس )\n⋆ نوع ↫ ( "..uuuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ⋆ ( "..ppppp.." دولار 💰 )","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ليس لديه حساب بنكي ","md",true)
 end
@@ -14325,7 +14325,7 @@ Redis:del("rahr1"..coniss)
 Redis:del("rahrr1"..coniss)
 Redis:del("numattack"..coniss)
 Redis:srem("rrfffid", coniss)
-LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..ccccc.."`\n⋆ بنك ↫ ( دٰآيموند )\n⋆ نوع ↫ ( "..uuuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ⋆ ( "..ppppp.." دولار 💰 )\n⋆ مسكين مسحت حسابه ","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..news.."\n⋆ الحساب ↫ `"..ccccc.."`\n⋆ بنك ↫ ( تيركس )\n⋆ نوع ↫ ( "..uuuuu.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )\n⋆ التسليب ⋆ ( "..ppppp.." دولار 💰 )\n⋆ مسكين مسحت حسابه ","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ ليس لديه حساب بنكي ","md",true)
 end
@@ -14357,7 +14357,7 @@ local convert_mony = string.format("%.0f",ballancee)
 local dfhb = Redis:get("boballbalc"..coniss)
 
 local fsvhh = Redis:get("boballban"..coniss)
-LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..yty.."\n⋆ الحساب ↫ `"..coniss.."`\n⋆ بنك ↫ ( دٰآيموند )\n⋆ نوع ↫ ( "..fsvhh.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⋆ الاسم ↫ "..yty.."\n⋆ الحساب ↫ `"..coniss.."`\n⋆ بنك ↫ ( تيركس )\n⋆ نوع ↫ ( "..fsvhh.." )\n⋆ الرصيد ↫ ( "..convert_mony.." دولار 💰 )","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "⋆ لا يوجده حساب بنكي كذا","md",true)
 end
@@ -14846,8 +14846,8 @@ decdecb = Redis:get("boob"..fsvhhh) or 0
 deccde2 = decdecb + UserNameyy
 Redis:set("boob"..fsvhhh , math.floor(deccde2))
 
-LuaTele.sendText(msg.chat_id,msg.id, "حوالة صادرة من بنك دٰآيموند\n\nالمرسل : "..news.."\nرقم الحساب : `"..cccc.."`\nنوع البطاقة : "..uuuu.."\nالمستلم : "..newss.."\nرقم الحساب : `"..text.."`\nنوع البطاقة : "..fsvhh.."\nخصمت 10% رسوم تحويل\nالمبلغ : "..convert_mony.." دولار 💰","md",true)
-LuaTele.sendText(fsvhhh,0, "حوالة واردة من بنك دٰآيموند\n\nالمرسل : "..news.."\nرقم الحساب : `"..cccc.."`\nنوع البطاقة : "..uuuu.."\nالمبلغ : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "حوالة صادرة من بنك تيركس\n\nالمرسل : "..news.."\nرقم الحساب : `"..cccc.."`\nنوع البطاقة : "..uuuu.."\nالمستلم : "..newss.."\nرقم الحساب : `"..text.."`\nنوع البطاقة : "..fsvhh.."\nخصمت 10% رسوم تحويل\nالمبلغ : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(fsvhhh,0, "حوالة واردة من بنك تيركس\n\nالمرسل : "..news.."\nرقم الحساب : `"..cccc.."`\nنوع البطاقة : "..uuuu.."\nالمبلغ : "..convert_mony.." دولار 💰","md",true)
 Redis:del("trans" .. msg.chat_id .. ":" .. msg.sender.user_id) 
 Redis:del("transn" .. msg.sender.user_id)
 else
@@ -14885,7 +14885,7 @@ local bank_users = Redis:smembers("booob")
 if #bank_users == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⋆ لا يوجد حسابات في البنك","md",true)
 end
-top_mony = "توب اغنى 25 شخص في بنك دٰآيموند :\nــــــــــــــــــــــــــــــــــــــــــــــــــ\n"
+top_mony = "توب اغنى 25 شخص في بنك تيركس :\nــــــــــــــــــــــــــــــــــــــــــــــــــ\n"
 mony_list = {}
 for k,v in pairs(bank_users) do
 local mony = Redis:get("boob"..v)
@@ -14949,7 +14949,7 @@ local ty_users = Redis:smembers("rrfffid")
 if #ty_users == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⋆ لا يوجد احد","md",true)
 end
-ty_anubis = "توب 20 شخص يسلبون فلوس في بنك دٰآيموند :\nــــــــــــــــــــــــــــــــــــــــــــــــــ\n"
+ty_anubis = "توب 20 شخص يسلبون فلوس في بنك تيركس :\nــــــــــــــــــــــــــــــــــــــــــــــــــ\n"
 ty_list = {}
 for k,v in pairs(ty_users) do
 local mony = Redis:get("rrfff"..v)
@@ -16800,7 +16800,7 @@ end
 
 if text == "الاسرع" or text == "ترتيب" then
 if Redis:get(Fast.."Status:Games"..msg.chat_id) then
-KlamSpeed = {"سحور","سياره","استقبال","قنفذ","ايفون","بزونه","مطبخ","كرستيانو","دجاجه","مدرسه","الوان","غرفه","ثلاجه","قهوه","سفينه","دٰآيموند","محطه","طياره","رادار","منزل","مستشفى","كهرباء","تفاحه","اخطبوط","سلمون","فرنسا","برتقاله","تفاح","مطرقه","لعبه","شباك","باص","سمكه","ذباب","تلفاز","حاسوب","انترنت","ساحه","جسر"};
+KlamSpeed = {"سحور","سياره","استقبال","قنفذ","ايفون","بزونه","مطبخ","كرستيانو","دجاجه","مدرسه","الوان","غرفه","ثلاجه","قهوه","سفينه","تيركس","محطه","طياره","رادار","منزل","مستشفى","كهرباء","تفاحه","اخطبوط","سلمون","فرنسا","برتقاله","تفاح","مطرقه","لعبه","شباك","باص","سمكه","ذباب","تلفاز","حاسوب","انترنت","ساحه","جسر"};
 name = KlamSpeed[math.random(#KlamSpeed)]
 Redis:set(Fast.."Game:Monotonous"..msg.chat_id,name)
 name = string.gsub(name,"سحور","س ر و ح")
@@ -16808,7 +16808,7 @@ name = string.gsub(name,"سياره","ه ر س ي ا")
 name = string.gsub(name,"استقبال","ل ب ا ت ق س ا")
 name = string.gsub(name,"قنفذ","ذ ق ن ف")
 name = string.gsub(name,"ايفون","و ن ف ا")
-name = string.gsub(name,"دٰآيموند","ر و ف ر ي")
+name = string.gsub(name,"تيركس","ر و ف ر ي")
 name = string.gsub(name,"مطبخ","خ ب ط م")
 name = string.gsub(name,"كرستيانو","س ت ا ن و ك ر ي")
 name = string.gsub(name,"دجاجه","ج ج ا د ه")
@@ -17296,7 +17296,7 @@ if text == '/start' or text == "رجوع ⋆" then
 Redis:sadd(Fast..'Num:User:Pv',msg.sender.user_id)  
 if not msg.Devss then
 if not Redis:get(Fast.."Start:Bot") then
-local CmdStart = '\n⋆ مرحبا انا بوت '..(Redis:get(Fast.."Name:Bot") or "دٰآيموند")..
+local CmdStart = '\n⋆ مرحبا انا بوت '..(Redis:get(Fast.."Name:Bot") or "تيركس")..
 '\n⋆ اختصاصي حمايه المجموعات'..
 '\n⋆ كما احتوي ايضا علي مميزات خدميه'..
 '\n⋆ للتفعيل اضفني مشرف في مجموعتك'..
@@ -17381,7 +17381,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_pers
 {{text = 'تغيير كليشه ستارت ⋆',type = 'text'},{text = 'حذف كليشه ستارت ⋆', type = 'text'},},
 {{text = 'الغاء الامر ⋆',type = 'text'},},
 {{text = 'رجوع ⋆',type = 'text'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه ببوتك المثبت علئ لسورس دٰآيموند فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'⋆ اهلا بك مجددا عزيزي المطور \n⋆ اليك الازرار الخاصه ببوتك المثبت علئ لسورس تيركس فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == '/votlx' or text == '/keb' then
 Redis:sadd(Fast..'Num:User:Pv',msg.sender.user_id)  
@@ -17524,7 +17524,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,"مطور سورس دٰآيموند» @"..chdevolper.."","html",true, false, false, true, reply_markup)
+return send(msg_chat_id,msg_id,"مطور سورس تيركس» @"..chdevolper.."","html",true, false, false, true, reply_markup)
 end
 if text == 'قناه السورس' then
 local reply_markup = LuaTele.replyMarkup{
@@ -18154,7 +18154,7 @@ if data and data.luatele and data.luatele == "updateNewInlineQuery" then
 
 local Text = data.query 
 if Text == '' then
-local input_message_content = {message_text = "٭ مرحبا عزيزي ، لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر الشخص \n ٭ مثال  @T6llbot هلا @XB_35"}	
+local input_message_content = {message_text = "٭ مرحبا عزيزي ، لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر الشخص \n ٭ مثال  @SIC4BOT هلا @A2NAA"}	
 local resuult = {{
 type = 'article',
 id = math.random(1,64),
@@ -18167,7 +18167,7 @@ inline_keyboard ={
 },
 },
 }
-https.request("https://api.telegram.org/bot"..Token..'/answerInlineQuery?inline_query_id='..data.id..'&switch_pm_text=@XB_35&switch_pm_parameter=start&results='..JSON.encode(resuult))
+https.request("https://api.telegram.org/bot"..Token..'/answerInlineQuery?inline_query_id='..data.id..'&switch_pm_text=@A2NAA&switch_pm_parameter=start&results='..JSON.encode(resuult))
 end
 
 if Text and Text:match("(.*)@(.*)") then
@@ -18657,14 +18657,14 @@ if Redis:get(Fast..'Set:array'..IdUser..':'..ChatId) == 'true1' then
 Redis:del(Fast..'Set:array'..IdUser..':'..ChatId)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ',url='http://t.me/A2NAA'}},
+{{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ',url='http://t.me/A2NAA'}},
 }
 local msg_idd = Msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&text='..URL.escape(" *⋆ تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ',url='http://t.me/A2NAA'}},
+{{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ',url='http://t.me/A2NAA'}},
 }
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&text='..URL.escape(" *⋆ تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -18708,7 +18708,7 @@ send(Sudo_Id,0,'*\n⋆ تم تفعيل مجموعه جديده \n⋆ من قام
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝒕𝒆𝒂𝒎 𝒅𝒊𝒂𝒎𝒐𝒏𝒅 ', url="t.me/A2NAA"},
+{text = '𝗦𝗢𝗨𝗥𝗖𝗘 𝗘𝗫𝗘𝗧𝗘𝗥𝗟𝗔𝗫 ', url="t.me/A2NAA"},
 },
 }
 local txxt = "⋆ تم تفعيل المجموعه و ترقيه {"..y.."} ادمنيه \n⋆ تم ترقية المالك "
@@ -19306,7 +19306,7 @@ data = {
 }
 }
 local TextHelp = [[*
-⋆ أهلا بك في قائمة العاب سورس دٰآيموند اختر نوع الالعاب 
+⋆ أهلا بك في قائمة العاب سورس تيركس اختر نوع الالعاب 
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -19346,7 +19346,7 @@ data = {
 }
 }
 local TextHelp = [[*
-⋆ مرحبا بك في الالعاب المتطورة الخاص بسورس دٰآيموند
+⋆ مرحبا بك في الالعاب المتطورة الخاص بسورس تيركس
 ⋆ اختر اللعبه ثم اختار المحادثة التي تريد اللعب بها
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
