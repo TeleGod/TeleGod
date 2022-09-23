@@ -11746,7 +11746,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '⋆ 𝗛 𝗠 𝗗 Ξ .ءلسيد ', url = 'http://t.me/Q_V_R '}, 
+{text = '⋆ 「 مـحـمـد 🇱🇾 」- ', url = 'http://t.me/JJPJB '}, 
 },
 }
 }
@@ -13028,7 +13028,7 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "https://t.me/A2NAA/7"
-local Name = '*- 𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒂𝒎𝒐𝒏𝒅  .*\n'
+local Name = '*- 𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒐𝒖𝒓𝒄𝒆 𝒆𝒙𝒆𝒕𝒆𝒓𝒍𝒂𝒙*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
