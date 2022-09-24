@@ -11741,7 +11741,7 @@ end
 send(msg_chat_id,msg_id,t,"md",true) 
 end 
 
-if text == 'مطور السورس' or text == 'محمد' or text == 'تيركس' then
+if text == 'مطور السورس' or text == 'محمد' or text == 'صاحب البوت' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -11750,18 +11750,18 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'*⋆ 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒔𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒂𝒎𝒐𝒏𝒅  *',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*⋆ 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒔𝒐𝒖𝒓𝒄𝒆  *',"md",false, false, false, false, reply_markup)
 end
 if text == 'مبرمج السورس' or text == 'محمد' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '「 ❥︎ 𝗧َ𝗘𝗥ُٰ𝗘ٌَ𝗫 🅉 🇱🇾 」@R_P_9 ', url = 'http://t.me/Ex1x0'}, 
+{text = '「 ❥︎ 𝗧َ𝗘𝗥ُٰ𝗘ٌَ𝗫 🅉 🇱🇾 」@R_P_9 ', url = 'http://t.me/R_P_9'}, 
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'*⋆ 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒔𝒐𝒖𝒓𝒄𝒆 𝒅𝒊𝒂𝒎𝒐𝒏𝒅  *',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*⋆ 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒔𝒐𝒖𝒓𝒄𝒆   *',"md",false, false, false, false, reply_markup)
 end
 if text == 'رابط الحذف' or text == 'بوت الحذف' then
 local reply_markup = LuaTele.replyMarkup{
