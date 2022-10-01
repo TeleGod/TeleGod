@@ -1135,7 +1135,7 @@ Welcome = Welcome:gsub('{user}',UserInfousername)
 Welcome = Welcome:gsub('{NameCh}',Get_Chat.title) 
 return send(msg_chat_id,msg_id,Welcome,"md")  
 else
-return send(msg_chat_id,msg_id,'⌯ نورت يا ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')\n❬ ممنوع الالفاظ والبرايفت واللينكات ❭\n❬ غير كده كلنا اخوات واصحاب ❭ ❤\n❬ هتخالف الاوامر هتطرد تلقائي ❭")  
+return send(msg_chat_id,msg_id,'⌯ نورت يا ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')\n❬ ممنوع الالفاظ والبرايفت واللينكات ❭\n❬ غير كده كلنا اخوات واصحاب ❭ ❤\n❬ هتخالف الاوامر هتطرد تلقائي ❭')
 end
 end
 end
