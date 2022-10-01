@@ -1135,7 +1135,7 @@ Welcome = Welcome:gsub('{user}',UserInfousername)
 Welcome = Welcome:gsub('{NameCh}',Get_Chat.title) 
 return send(msg_chat_id,msg_id,Welcome,"md")  
 else
-return send(msg_chat_id,msg_id,'⌯ نورت يا ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')\n❬ ممنوع الالفاظ والبرايفت واللينكات ❭\n❬ غير كده كلنا اخوات واصحاب ❭ ❤\n❬ هتخالف الاوامر هتطرد تلقائي ❭')
+return send(msg_chat_id,msg_id,'⌯ نورت يا ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')\n❬ ممنوع الالفاظ والبرايفت واللينكات ❭\n❬ غير كده كلنا اخوات واصحاب ❭ ❤\n❬ هتخالف الاوامر هتطرد تلقائي ❭\n\n\n♢ اسم الجروب {'..Get_Chat.title..'}',"md")
 end
 end
 end
@@ -1145,9 +1145,7 @@ return false
 end
 if matches[1] == "chat_del_user" then 
 local bye_name = msg.action.user.first_name 
-return '⌯ انت مش جدع يا '..bye_name 😟
-❬ حد يكون في جروب قمر زي دا ويغادر ❭
-❬ يلا بالسلامه فستين داهيه 😼😹 ❭
+return '⌯ انت مش جدع يا ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..') 😟\n❬ حد يكون في جروب قمر زي دا ويغادر ❭\n❬ يلا بالسلامه فستين داهيه 😼😹 ❭'
 end 
 end 
 
