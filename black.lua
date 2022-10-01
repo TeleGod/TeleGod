@@ -1143,21 +1143,6 @@ if not msg.Special and msg.content.luatele ~= "messageChatAddMembers" and Redis:
 if tonumber(msg.sender.user_id) == tonumber(Fast) then
 return false
 end
-if matches[1] == "chat_del_user" then 
-local bye_name = msg.action.user.first_name 
-return '⌯ انت مش جدع يا ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..') 😟\n❬ حد يكون في جروب قمر زي دا ويغادر ❭\n❬ يلا بالسلامه فستين داهيه 😼😹 ❭'
-end 
-end 
-
-return { 
-patterns = { 
-"^!!tgservice (chat_add_user)$", 
-"^!!tgservice (chat_add_user_link)$", 
-"^!!tgservice (chat_del_user)$", 
-}, 
-run = iq_abs, 
-} 
-end
 local floods = Redis:hget(Fast.."Spam:Group:User"..msg_chat_id,"Spam:User") or "nil"
 local Num_Msg_Max = Redis:hget(Fast.."Spam:Group:User"..msg_chat_id,"Num:Spam") or 5
 local post_count = tonumber(Redis:get(Fast.."Spam:Cont"..msg.sender.user_id..":"..msg_chat_id) or 0)
